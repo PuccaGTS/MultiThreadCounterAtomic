@@ -85,15 +85,7 @@ public class Main {
     }
 
     public static boolean isPalindrome(String nickName) {
-        if (nickName.length() % 2 == 0) {
-            String firstHalf = nickName.substring(0, nickName.length() / 2);
-            String secondHalf = new StringBuilder(nickName.substring(nickName.length() / 2)).reverse().toString();
-            return firstHalf.equals(secondHalf);
-        } else {
-            String firstHalf = nickName.substring(0, nickName.length() / 2);
-            String secondHalf = new StringBuilder(nickName.substring(nickName.length() / 2 + 1)).reverse().toString();
-            return firstHalf.equals(secondHalf);
-        }
+        return nickName.equalsIgnoreCase(new StringBuilder(nickName).reverse().toString());
     }
 
     public static boolean isSameLetterWord(String nickName) {
